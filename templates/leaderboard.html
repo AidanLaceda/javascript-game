@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<main>
+    <table>
+        {% for scores in leaderboard %}
+        <tr>
+            <td>{{ scores["score"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</main>
+
+{% endblock %}

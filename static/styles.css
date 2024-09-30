@@ -1,0 +1,47 @@
+html {
+    font-family: 'Pixelify Sans', 'sans-serif';
+}
+
+#game {
+    background-color: black;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+
+#outcome {
+    display: none;
+    margin: 10rem 5rem 5rem 5rem;
+}
+
+#outcome nav > a {
+    padding: 5px 5px 5px 5px;
+    margin: 2rem 2rem 2rem 2rem;
+}
+
+form {
+    display: none;
+}
+
+#score {
+    margin: 0.5rem 0 0 0;
+}
+
+
+table td{
+    border: 2px solid black;
+    border-collapse:collapse;
+}
+
+table {
+    max-width: 100%;
+    margin: 0 20rem 0 20rem;
+}
+
+body {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%
+}
+

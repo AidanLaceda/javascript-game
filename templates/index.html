@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<main>
+    <p><a href="{{ url_for('game') }}">Play Game</a></p>
+    <!-- <p><a href="{{ url_for('leaderboard') }}">Leaderboard</a></p>  -->
+
+    <section>
+        <h2>Instructions!</h2>
+        <p>Oh no! While venturing into a haunted crypt, you encounter a dead end! The undead are rapidly streaming into
+            the room and it is up to you
+            to fend yourself with the blessed tinctures at your disposal!
+        </p>
+        <table>
+            <caption>How to Play!</caption>
+            <tr>
+                <td>W or Up Arrow Key</td>
+                <td>Move Up</td>
+            </tr>
+            <tr>
+                <td>A or Left Arrow Key</td>
+                <td>Move Left</td>
+            </tr>
+            <tr>
+                <td>S or Down Arrow Key</td>
+                <td>Move Down</td>
+            </tr>
+            <tr>
+                <td>D or Right Arrow Key</td>
+                <td>Move Right</td>
+            </tr>
+            <tr>
+                <td>Left Mouse-click</td>
+                <td>Fire</td>
+            </tr>
+            <tr>
+                <td>Y</td>
+                <td>Change ammo type</td>
+            </tr>
+
+        </table>
+    </section>
+</main>
+{% endblock %}
