@@ -164,9 +164,11 @@ function draw() {
     }
 
     player_movement();
+    power_up_collision(powerUps, player);
 
     enemy_movement(enemies, player);
     enemy_collision(enemies)
+
 
     shoot_bullet(bullets);
     move_bullet(bullets);
@@ -386,6 +388,26 @@ function enemy_movement(enemies_array) {
     
 }
 
+function power_up_collision(powerUps_array, player) {
+    for (let powerUp of powerUps_array) {
+        if (powerUp.x + powerUp.size < player.x ||
+            player.x + player.width < powerUp.x ||
+            powerUp.y + powerUp.size < player.y ||
+            player.y + player.height < powerUp.y) {
+                // No collision
+        }
+
+        else {
+            if ((player.health + 15) <= 100) {
+                player.health += 15
+            }
+            
+            
+            powerUps_array.splice(powerUps_array.indexOf(powerUp), 1);
+
+        }
+    }
+}
 
 function shoot_bullet(bullets_array) {
     /*
@@ -507,27 +529,6 @@ function death() {
     window.removeEventListener("mousedown", shoot_flag);
     let outcome_element = document.querySelector("#outcome");
     outcome_element.style.display = "block"
-
-//     let data = new FormData();
-//     data.append("score", score);
-
-//     xhttp = new XMLHttpRequest();
-//     xhttp.addEventListener("readystatechange", handle_response, false);
-//     xhttp.open("POST", "store_score", true);
-//     xhttp.send(data);
-// }
-
-// function handle_response() {
-//     if ( xhttp.readyState === 4) {
-//         if ( xhttp.status === 200 ) {
-//             if ( xhttp.responseText === "success" ) {
-//                 console.log("Yes")
-//             }
-//             else {
-//                 console.log("No")
-//             }
-//         }
-//     }
 }
 
 function load_assets(assets, callback) {
